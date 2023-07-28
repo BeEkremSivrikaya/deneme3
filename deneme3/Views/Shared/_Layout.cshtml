@@ -1,0 +1,443 @@
+﻿@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Bootstrap CSS delete later ! -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+
+    <!-- Fontawesome CDN New icons -->
+    <script src="https://kit.fontawesome.com/816b9d000e.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN New icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Minikod Akademi</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/Content/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- W3 CSS - Bootstrap alternative-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper"> 
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-info sidebar sidebar-dark accordion" id="accordionSidebar" style="width:300px;">
+
+            <!-- Sidebar - Brand Logo -->
+
+            <!--
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                   <div class="sidebar-brand-icon"> <img src="~/Graphics/sari-minik.png" width="100" height="60"> </div> 
+            </a>
+             -->
+
+            <!-- Sidebar - Brand Text -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Ogrenci/Index">
+                <div class="sidebar-brand-text mx-3">MİNİKOD AKADEMİ</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Sayfalar
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu1 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                   aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa-solid fa-book fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Sayfalar</span>
+                </a>
+
+
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Giriş Sayfaları:</h6>
+                        <a class="collapse-item" href="/Login/Login">Giriş</a>
+                        <a class="collapse-item" href="x">Kayıt</a>
+                        <a class="collapse-item" href="x">Şifremi Unuttum</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Diğer sayfalar:</h6>
+                        <a class="collapse-item" href="x">404 Hatası</a>
+                        <a class="collapse-item" href="x">Boş Sayfa</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu1 -->
+
+            <!-- Nav Item - Pages Collapse Menu2 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
+                   aria-expanded="true" aria-controls="collapsePages2">
+                    <i class="fa-solid fa-receipt fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Fatura</span>
+                </a>
+
+
+                <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Fatura İşlemleri:</h6>
+                        <a class="collapse-item" href="/Fatura/Index">Fatura Listesi</a>
+                        <a class="collapse-item" href="/Fatura/FaturaEkle">Fatura Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu2 -->
+
+            <!-- Nav Item - Pages Collapse Menu25 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages25"
+                   aria-expanded="true" aria-controls="collapsePages25">
+                    <i class="fa-solid fa-receipt fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Ödeme</span>
+                </a>
+
+
+                <div id="collapsePages25" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Fatura İşlemleri:</h6>
+                        <a class="collapse-item" href="/Fatura/Index">Fatura Listesi</a>
+                        <a class="collapse-item" href="/Fatura/FaturaEkle">Fatura Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu25 -->
+
+            <!-- Nav Item - Pages Collapse Menu3 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages3"
+                   aria-expanded="true" aria-controls="collapsePages3">
+                    <i class="fa-solid fa-layer-group fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Kur</span>
+                </a>
+
+                <div id="collapsePages3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Kur İşlemleri:</h6>
+                        <a class="collapse-item" href="/Kur/Index">Kur Listesi</a>
+                        <a class="collapse-item" href="/Kur/KurEkle">Kur Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu3 -->
+
+            <!-- Nav Item - Pages Collapse Menu4 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages4"
+                   aria-expanded="true" aria-controls="collapsePages4">
+                    <i class="fa-solid fa-user-graduate fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Öğrenci</span>
+                </a>
+
+                <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Öğrenci İşlemleri:</h6>
+                        <a class="collapse-item" href="/Ogrenci/Index">Öğrenci Listesi</a>
+                        <a class="collapse-item" href="/Ogrenci/YeniDepartman">Öğrenci Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu4 -->
+
+            <!-- Nav Item - Pages Collapse Menu5 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages5"
+                   aria-expanded="true" aria-controls="collapsePages5">
+                    <i class="fa-solid fa-users fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Personel</span>
+                </a>
+
+                <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Personel İşlemleri:</h6>
+                        <a class="collapse-item" href="/Personel/Index">Personel Listesi</a>
+                        <a class="collapse-item" href="/Personel/PersonelEkle">Personel Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu5 -->
+
+            <!-- Nav Item - Pages Collapse Menu6 -->
+            <li class="nav-item">
+                <!-- Before Collapsed -->
+                <!-- <div class="row"> </div> -->
+                <!-- <div class="col-md-auto"> </div> -->
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages6" aria-expanded="true" aria-controls="collapsePages6">
+                    <i class="fa-solid fa-pen-nib fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Sınav</span>
+                    </a>
+                <!-- Before Collapsed -->
+
+                <!-- Collapsed -->
+                <div id="collapsePages6" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Sınav İşlemleri:</h6>
+                        <a class="collapse-item" href="/Sinav/Index">Sınav Listesi</a>
+                        <a class="collapse-item" href="/Sinav/SınavEkle">Sınav Ekle</a>
+                    </div>
+                </div>
+                <!-- Collapsed -->
+            </li>
+            <!-- Nav Item - Pages Collapse Menu6 -->
+
+            <!-- Nav Item - Pages Collapse Menu7 --> 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages7"
+                   aria-expanded="true" aria-controls="collapsePages7">
+                    <i class="fa-solid fa-school fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Şube</span>
+                </a>
+
+                <div id="collapsePages7" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Şube İşlemleri:</h6>
+                        <a class="collapse-item" href="/Sube/Index">Şube Listesi</a>
+                        <a class="collapse-item" href="/Sube/SubeEkle">Şube Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu7 -->
+
+            <!-- Nav Item - Pages Collapse Menu8 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages8"
+                   aria-expanded="true" aria-controls="collapsePages8">
+                    <i class="fa-solid fa-person fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Veli</span>
+                </a>
+
+                <div id="collapsePages8" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Veli İşlemleri:</h6>
+                        <a class="collapse-item" href="/Veli/Index">Veli Listesi</a>
+                        <a class="collapse-item" href="/Veli/VeliEkle">Veli Ekle</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu8 -->
+
+            <!-- Nav Item - Pages Collapse Menu9 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages9"
+                   aria-expanded="true" aria-controls="collapsePages9">
+                    <i class="fa-solid fa-gear fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Ayarlar</span>
+                </a>
+
+                <div id="collapsePages9" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Ayarlar:</h6>
+                        <a class="collapse-item" href="/Ayarlar/Index">Ayar Listesi</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu9 -->
+            <!-- if ( User.HasClaim("UserData", "Ankara")) -->
+            @if (User.IsInRole("B") && User.HasClaim(System.Security.Claims.ClaimTypes.UserData, "Eskişehir"))
+            {
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Arama/Index">
+                    <i class="fa-solid fa-magnifying-glass fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Arama</span>
+                </a>
+            </li>
+            <!-- Nav Item - Tables -->
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Yetki/Index">
+                    <i class="fa-solid fa-calendar-check fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Yetki</span>
+                </a>
+            </li>
+            <!-- Nav Item - Tables -->
+            }
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Login/LogOut">
+                    <i class="fa-solid fa-right-from-bracket fa-fw" style="color:white;font-size:25px;"></i>
+                    <span class="gizlen" style="color:white;font-size:25px;">Çıkış Yap</span>
+                </a>
+            </li>
+            <!-- Nav Item - Tables -->
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle" onclick="gizlen()"></button>
+            </div>
+
+        </ul>
+        <!-- Begin of Sidebar Html-Css -->
+        <style>
+            [class^="fa"] 
+            {
+                width: 25px;
+                height: 25px;
+                position: relative;
+                top: -2.5px;
+                margin-left: 5px;
+            }
+
+            .gizlen 
+            {
+                position: relative;
+                margin-left: 20px;
+            }
+            
+            
+            
+        </style>
+        <!-- End of Sidebar Html-Css -->
+        <script>
+            function gizlen() {
+                var x = document.getElementsByClassName("gizlen");
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display === "none") {
+                        x[i].style.display = "inline";
+                    } else {
+                        x[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+        <!-- End of Sidebar -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar2 -->
+                <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #93278f;">
+
+                    <a class="navbar-brand d-lg-none" href="#"><img src="logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler7"
+                            aria-controls="myNavbarToggler7" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="myNavbarToggler7">
+                        <ul class="navbar-nav mx-auto"> <!-- mx orta, mr sol, ml saga hizalıyor -->
+                            <a class="d-none d-lg-block" href="/Ogrenci/Index">
+                                <img src="~/Graphics/sari-minik.png" width="200" height="120">
+                                <h4 style="color:yellow;">MİNİKOD AKADEMİ OBS</h4>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <!--
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav mr-auto">
+                            <a class="d-none d-lg-block" href="/Ogrenci/Index">
+                                <script> 
+                                string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
+                                </script>
+                                <h4 style="color:yellow;">Sayfa:"actionName"</h4>
+                            </a>
+                        </ul>
+                    </div>
+                    -->
+
+                    <!--
+                    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="d-none d-lg-block" href="/Ogrenci/Index">
+                                    <img src="~/Graphics/sari-minik.png" width="100" height="60"> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    -->
+
+                </nav>
+                <!-- Topbar2 -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+                <!-- Scroll to Top Button-->
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="~/Content/js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="~/Content/vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="~/Content/js/demo/chart-area-demo.js"></script>
+        <script src="~/Content/js/demo/chart-pie-demo.js"></script>
+        
+        @RenderSection("Scripts", required: false)
+
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+
+<!-- Footer 
+    <footer class="sticky-footer" style="background-color: #93278f; ">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span style="color:yellow;font-size:18px;">Copyright &copy; Minikod Akademi 2022</span>
+            </div>
+        </div>
+    </footer>
+Footer-->
+
+
+</body>
+</html>
+
+
+
+

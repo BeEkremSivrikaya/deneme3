@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Tables;
+@model List<Sınavlar>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sınav Listesi</h1>
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Sınav Kodu</th>
+        <th>Öğrenci Numarası</th>
+        <th>Kur</th>
+        <th>Başarı Notu</th>
+    </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.SınavKodu</td>
+            <td>@x.Ogrenci_No</td>
+            <td>@x.Kur</td>
+            <td>@x.BasariNotu</td>
+        </tr>
+    }
+
+</table>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th {
+        border: 1px solid black;
+    }
+
+</style>
+
+<a href="/Sinav/SınavEkle" class=" btn btn-danger">Sınav ekle</a>
+<a href="/Sinav/SınavGetir" class=" btn btn-danger">Sınav Getir</a>
+
+

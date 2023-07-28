@@ -1,0 +1,20 @@
+﻿
+@model EntityLayer.Tables.Ogrenci;
+@{
+    ViewData["Title"] = "OgrenciGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Öğrenci Getir</h1>
+
+<form class="form-group" method="post">
+
+
+    <label>Öğrenci No</label>
+    @Html.TextBoxFor(x=>x.OgrenciNo,new{@class="form-control"})
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+</form>

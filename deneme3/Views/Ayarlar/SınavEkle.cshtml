@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.SınavTurleri;
+@{
+    ViewData["Title"] = "SınavEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sınav Ekle</h1>
+
+<form class="form-group" method="post">
+
+
+    <label>Sınav Adı</label>
+    @Html.TextBoxFor(x=>x.sınavAdi,new{@class="form-control"})
+
+
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+
+</form>

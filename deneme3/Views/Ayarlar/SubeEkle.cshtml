@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Sube;
+@{
+    ViewData["Title"] = "SubeEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sube Ekle</h1>
+
+
+<form class="form-group" method="post">
+
+
+    <label>Şube Adı</label>
+    @Html.TextBoxFor(x=>x.Sube_Adı,new{@class="form-control"})
+    <label>Şube Adres</label>
+    @Html.TextBoxFor(x=>x.Sube_Adres,new{@class="form-control"})
+
+
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+
+</form>

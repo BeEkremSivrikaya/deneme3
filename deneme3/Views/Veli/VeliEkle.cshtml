@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Veli;
+@{
+    ViewData["Title"] = "VeliEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Veli Ekle</h1>
+
+<form class="form-group" method="post">
+
+    <label>Kimlik Numarası</label>
+    @Html.TextBoxFor(x=>x.TckimlikNo,new{@class="form-control"})
+    <label>Veli Ad</label>
+    @Html.TextBoxFor(x=>x.Veli_Ad,new{@class="form-control"})
+    <label>Veli Soyad</label>
+    @Html.TextBoxFor(x=>x.Veli_Soyad,new{@class="form-control"})
+    <label>Meslek</label>
+    @Html.TextBoxFor(x=>x.Meslek,new{@class="form-control"})
+    <label>Cep Numarası</label>
+    @Html.TextBoxFor(x=>x.Cepno,new{@class="form-control"})
+    <label>Eposta</label>
+    @Html.TextBoxFor(x=>x.Eposta,new{@class="form-control"})
+    <label>Öğrenci Numarası</label>
+    @Html.TextBoxFor(x=>x.Ogrenci_Id,new{@class="form-control"})
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+</form>

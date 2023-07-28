@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.GiderTurleri;
+@{
+    ViewData["Title"] = "GiderTuru";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Gider Türü</h1>
+
+<form class="form-group" method="post">
+
+
+    <label>Gider Adı</label>
+    @Html.TextBoxFor(x=>x.gideradi,new{@class="form-control"})
+
+
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+
+</form>

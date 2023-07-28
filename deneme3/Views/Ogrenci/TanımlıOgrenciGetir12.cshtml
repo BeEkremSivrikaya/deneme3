@@ -1,0 +1,32 @@
+﻿
+@using EntityLayer.Tables
+@{
+    ViewData["Title"] = "TanımlıOgrenciGetir12";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tanımlı Öğrenci Getir</h1>
+
+<table class=" table table-bordered">
+    <tr>
+        <th>Öğrenci Numarası</th>
+        <th>Öğrenci Ad</th>
+        <th>Öğrenci Soyad</th>
+        <th>Kimlik Numarası</th>
+        <th>Cinsiyet</th>
+        <th>Durum</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.OgrenciNo</td>
+            <th>@x.OgrenciAdi</th>
+            <td>@x.OgrenciSoyad</td>
+            <td>@x.TckimlikNo</td>
+            <td>@x.Cinsiyet</td>
+            <td>@x.Durum</td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Tables;
+@model List<Admin>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yetki Listesi</h1>
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>AdminID</th>
+            <th>Kullanici</th>
+            <th>Sifre</th>
+            <th>Rol</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.AdminID</td>
+            <td>@x.Kullanici</td>
+            <td>@x.Sifre</td>
+            <td>@x.Rol</td>
+        </tr>
+    }
+
+</table>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th {
+        border: 1px solid black;
+    }
+
+</style>
+
+<a href="/Yetki/Yetkilendir" class=" btn btn-danger">Yetki Ekle</a>

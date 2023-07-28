@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Ogrenci
+@{
+    ViewData["Title"] = "OgrenciGoster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Öğrenci Göster</h1>
+
+<table class=" table table-bordered">
+    <tr>
+        <th>TckimlikNo</th>
+        <th>OgrenciNo</th>
+        <th>Cinsiyet</th>
+        <th>OgrenciSoyad</th>
+        <th>Ekle</th>
+        <th>Durum</th>
+    </tr>
+
+       <tr>
+            <td>@Model.TckimlikNo</td>
+            <td>@Model.OgrenciNo</td>
+            <td>@Model.Cinsiyet</td>
+            <td>@Model.OgrenciSoyad</td>
+            <td>
+
+
+            </td>
+
+
+        </tr>
+    
+
+   
+</table>
+

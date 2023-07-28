@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Fatura;
+@{
+    ViewData["Title"] = "FaturaEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Fatura Ekle</h1>
+<form class="form-group" method="post">
+
+    <label>Fatura Numarası</label>
+    @Html.TextBoxFor(x=>x.fatura_no,new{@class="form-control"})
+    <label>Vergi Numarası</label>
+    @Html.TextBoxFor(x=>x.Vergi_No,new{@class="form-control"})
+    <label>Vergi Dairesi Adı</label>
+    @Html.TextBoxFor(x=>x.Vergi_Dairesi_Adi,new{@class="form-control"})
+    <label>Seri Numarası</label>
+    @Html.TextBoxFor(x=>x.Seri_No,new{@class="form-control"})
+    <label>Şube Numarası</label>
+    @Html.TextBoxFor(x=>x.Sube_No,new{@class="form-control"})
+    <label>İşlem Tutarı</label>
+    @Html.TextBoxFor(x=>x.Islem_Tutarı,new{@class="form-control"})
+    <label>Kdv Oranı</label>
+    @Html.TextBoxFor(x=>x.Kdv_Oranı,new{@class="form-control"})
+    <label>Toplam Tutar</label>
+    @Html.TextBoxFor(x=>x.Toplam_Tutar,new{@class="form-control"})
+    <label>İşlem Numarası</label>
+    @Html.TextBoxFor(x=>x.Islem_No,new{@class="form-control"})
+    <label>Onay Kodu</label>
+    @Html.TextBoxFor(x=>x.Onay_Kodu,new{@class="form-control"})
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+</form>
+
+
+

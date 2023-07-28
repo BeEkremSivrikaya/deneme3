@@ -1,0 +1,121 @@
+﻿@using EntityLayer.Tables;
+@model List<Fatura>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Fatura Listesi</h1>
+
+<label>Fatura Bul</label>
+<label>Ad</label>
+<input type="text" id="ad_search_query" style="width:295px">&nbsp;
+<label>Soyad</label>
+<input type="text" id="soyad_search_query" style="width:295px">&nbsp;
+<input type="button" value="Bul" class="p-userButton" onClick="FaturaGet(document.getElementById('ad_search_query').value, document.getElementById('soyad_search_query').value);" />
+
+<script>
+    function FaturaGet(fatura_ad,fatura_soyad) 
+    {
+        alert(fatura_ad +" "+ fatura_soyad + " adlı kişinin faturasına yönlendirileceksiniz.")
+        var url = '@Html.Raw(Url.Action("FaturaSorgu","Fatura", new { fatura_ad = "__fatura_ad__", fatura_soyad = "__fatura_soyad__"}))';
+        var params = url.replace('__fatura_ad__', String(fatura_ad)).replace('__fatura_soyad__', String(fatura_soyad));
+        window.location.href = params;
+    }
+</script>
+
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Fatura Numarası</th>
+
+        <th>Fatura Tipi</th>
+
+        <th>Firma Adı</th>
+        <th>Vergi Numarası</th>
+        <th>Vergi Dairesi Adı</th>
+
+        <th>Birey Adı</th>
+        <th>Birey Soyadı</th>
+        <th>Birey TC</th>
+
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Şube No</th>
+        <th>İşlem No</th>
+        <th>İşlem Tutarı</th>
+        <th>Kdv Oranı</th>
+        <th>Toplam Tutar</th>
+        <th>Fatura Tarihi</th>
+        <th>Onay Kodu</th>
+
+        <th>Fatura Detay</th>
+    </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.fatura_no</td>
+
+            <td>@x.Fatura_Tipi</td>
+
+            <td>@x.Firma_Adi</td>
+            <td>@x.Vergi_No</td>
+            <td>@x.Vergi_Dairesi_Adi</td>
+
+            <td>@x.Birey_Adi</td>
+            <td>@x.Birey_Soyadi</td>
+            <td>@x.Birey_Tc</td>
+
+
+            <td>@x.Seri_No</td>
+            <td>@x.Sıra_No</td>
+            <td>@x.Sube_No</td>
+            <td>@x.Islem_No</td>
+            <td>@x.Islem_Tutarı</td>
+            <td>@x.Kdv_Oranı</td>
+            <td>@x.Toplam_Tutar</td>
+            <td>@x.Fatura_Tarihi</td>
+            <td>@x.Onay_Kodu</td>
+
+            <td>
+                <span>
+                    <a href="/Fatura/FaturaDetay/@x.fatura_no" class="btn btn-danger">Fatura Detay</a>
+                </span>
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th {
+        border: 1px solid black;
+    }
+
+</style>
+
+
+<a href="/Fatura/FaturaEkle" class=" btn btn-danger">Fatura ekle</a>
+<a href="/Fatura/FaturaGetir" class=" btn btn-danger">Fatura Getir</a>
+
+

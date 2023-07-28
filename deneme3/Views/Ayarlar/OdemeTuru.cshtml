@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.OdemeTurleri;
+@{
+    ViewData["Title"] = "OdemeTuru";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ödeme Türü</h1>
+
+<form class="form-group" method="post">
+
+
+    <label>Ödeme Türü</label>
+    @Html.TextBoxFor(x=>x.OdemeTurAdi,new{@class="form-control"})
+
+
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+
+</form>

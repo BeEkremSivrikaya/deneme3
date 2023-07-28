@@ -1,0 +1,176 @@
+﻿@using deneme3.ViewModel;
+@using System.Buffers;
+@model OgrenciKayıtViewModel;
+
+@{
+    ViewData["Title"] = "Yeni Öğrenci Kayıt Formu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+        integrity = "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin = "anonymous" >
+</script>
+
+@section scripts
+{
+    <script src="~/scripts-jquery/jquery-ui-1.13.2.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+       $(".datepicker").datepicker({
+          dateFormat: "dd-mm-yy",
+              changemonth: true,
+          changeyear: true
+          });
+       });
+    </script>
+
+}
+
+
+<link href="~/content-jquery/themes/base/datepicker.css" rel="stylesheet" />
+
+<head>
+    <style>
+        #example1 {
+            box-sizing: content-box;
+            width: 200px;
+            height: 250px;
+            padding: 50px;
+            border: 2px solid green;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #example2 {
+            box-sizing: content-box;
+            width: 200px;
+            height: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+
+<form method="post" asp-controller="Ogrenci" enctype="multipart/form-data" asp-action="YeniDepartman">
+
+    <fieldset class="form-group border border-success p-4" id="fieldddstyle" style="margin-top: 10px;">
+        <legend class="w-auto px-2">Öğrenci Bilgileri</legend>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(x=>x.ogrenci.OgrenciNo)
+                    @Html.TextBoxFor(x=>x.ogrenci.OgrenciNo,new{@class="form-control"})
+                    @Html.LabelFor(x=>x.ogrenci.TckimlikNo)
+                    @Html.TextBoxFor(x=>x.ogrenci.TckimlikNo,new{@class="form-control"})
+                    @Html.LabelFor(x=>x.ogrenci.OgrenciAdi)
+                    @Html.TextBoxFor(x=>x.ogrenci.OgrenciAdi,new{@class="form-control"})
+                    @Html.LabelFor(x=>x.ogrenci.OgrenciSoyad)
+                    @Html.TextBoxFor(x=>x.ogrenci.OgrenciSoyad,new{@class="form-control"})
+                    @Html.LabelFor(x=>x.ogrenci.CepNo)
+                    @Html.TextBoxFor(x=>x.ogrenci.CepNo,new{@class="form-control"})
+                    @Html.LabelFor(x=>x.ogrenci.Email)
+                    @Html.TextBoxFor(x=>x.ogrenci.Email,new{@class="form-control"})
+                    <!--Cinsiyet-->
+                    <label asp-for="ogrenci.StudentGender" class="control-label"></label>
+                    <select asp-for="ogrenci.StudentGender"
+                            class="form-control"
+                            asp-items="Html.GetEnumSelectList<EntityLayer.Tables.Ogrenci.Gender>()">
+                        <option>Cinsiyet</option>
+                    </select>
+                    <!--Cinsiyet-->
+                    <!--Dogum Tarihi-->
+                    @Html.LabelFor(x=>x.ogrenci.DogumTarihi)
+                    <br/>
+                    @Html.EditorFor(x=>x.ogrenci.DogumTarihi,new{@class="datepicker"})
+                    <br/>
+                    <!--Dogum Tarihi-->
+                    <!--Kayit Tarihi-->
+                    @Html.LabelFor(x=>x.ogrenci.KayitTarihi)
+                    <br/>
+                    @Html.EditorFor(x=>x.ogrenci.KayitTarihi,new{@class="datepicker"})
+                    <br/>
+                    <!--Kayit Tarihi-->
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="center">
+                    <div class="form-group">
+
+                        <div id="example1">
+                            <label for="formFile" class="form-label">Fotoğraf Yükleme <br> Alanı </label>
+                        </div>
+
+                        <div id="example2">
+                            <input type="file" name="formFile" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group border border-success p-4">
+        <legend class="w-auto px-2">Baba Bilgileri</legend>
+        <div class="form-group">
+            <!--Veli Tipi-->
+            <label asp-for="Baba.VelininTipi" class="control-label"></label>
+            <select asp-for="Baba.VelininTipi"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<EntityLayer.Tables.Veli.VeliTipi>()">
+                <option>Veli Tipi</option>
+            </select>
+            <!--Veli Tipi-->
+            @Html.LabelFor(x=>x.Baba.TckimlikNo)
+            @Html.TextBoxFor(x=>x.Baba.TckimlikNo,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Baba.Veli_Ad)
+            @Html.TextBoxFor(x=>x.Baba.Veli_Ad,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Baba.Veli_Soyad)
+            @Html.TextBoxFor(x=>x.Baba.Veli_Soyad,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Baba.Meslek)
+            @Html.TextBoxFor(x=>x.Baba.Meslek,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Baba.Eposta)
+            @Html.TextBoxFor(x=>x.Baba.Eposta,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Baba.Cepno)
+            @Html.TextBoxFor(x=>x.Baba.Cepno,new{@class="form-control"})
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group border border-success p-4">
+        <legend class="w-auto px-2">Anne Bilgileri</legend>
+        <div class="form-group">
+            <!--Veli Tipi-->
+            <label asp-for="Anne.VelininTipi" class="control-label"></label>
+            <select asp-for="Anne.VelininTipi"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<EntityLayer.Tables.Veli.VeliTipi>()">
+                <option>Veli Tipi</option>
+            </select>
+            <!--Veli Tipi-->
+            @Html.LabelFor(x=>x.Anne.TckimlikNo)
+            @Html.TextBoxFor(x=>x.Anne.TckimlikNo,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Anne.Veli_Ad)
+            @Html.TextBoxFor(x=>x.Anne.Veli_Ad,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Anne.Veli_Soyad)
+            @Html.TextBoxFor(x=>x.Anne.Veli_Soyad,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Anne.Meslek)
+            @Html.TextBoxFor(x=>x.Anne.Meslek,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Anne.Eposta)
+            @Html.TextBoxFor(x=>x.Anne.Eposta,new{@class="form-control"})
+            @Html.LabelFor(x=>x.Anne.Cepno)
+            @Html.TextBoxFor(x=>x.Anne.Cepno,new{@class="form-control"})
+        </div>
+    </fieldset>
+
+    <button class="btn btn-info">Ekle</button>
+
+</form>

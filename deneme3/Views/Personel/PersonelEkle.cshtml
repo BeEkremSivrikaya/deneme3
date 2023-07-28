@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Personel;
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel Ekle</h1>
+<form class="form-group" method="post">
+
+    <label>Personel Id</label>
+    @Html.TextBoxFor(x=>x.PersonelId,new{@class="form-control"})
+    <label>Personel Ad</label>
+    @Html.TextBoxFor(x=>x.PersonelAdi,new{@class="form-control"})
+    <label>Personel Soyad</label>
+    @Html.TextBoxFor(x=>x.PersonelSoyadi,new{@class="form-control"})
+    <label>Şube Id</label>
+    @Html.TextBoxFor(x=>x.Sube_Id,new{@class="form-control"})
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+</form>

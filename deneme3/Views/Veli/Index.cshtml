@@ -1,0 +1,62 @@
+﻿@using EntityLayer.Tables;
+@model List<Veli>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Veli Listesi</h1>
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Kimlik Numarası</th>
+        <th>Veli Ad</th>
+        <th>Veli Soyad</th>
+        <th>Mesleği</th>
+        <th>Cep Numarası</th>
+        <th>Eposta</th>
+    </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.TckimlikNo</td>
+            <td>@x.Veli_Ad</td>
+            <td>@x.Veli_Soyad</td>
+            <td>@x.Meslek</td>
+            <td>@x.Cepno</td>
+            <td>@x.Eposta</td>
+            
+        </tr>
+    }
+
+</table>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th {
+        border: 1px solid black;
+    }
+
+</style>
+
+
+<a href="/Veli/VeliEkle" class=" btn btn-danger">Veli Ekle</a>
+<a href="/Veli/VeliGetir" class=" btn btn-danger">Veli Getir</a>
+

@@ -1,0 +1,162 @@
+﻿@using System.Security.Cryptography;
+@using EntityLayer.Tables;
+@using System.IO
+@using System.Text
+@model EntityLayer.Tables.Ogrenci;
+@{
+    ViewData["Title"] = "OgrenciDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<body>
+
+
+<h1>Çözülmüş Öğrenci Detayları</h1>
+
+    <div> <label>Öğrenci Fotoğrafı</label> </div>
+    
+    <img onerror="this.src = 'default.jpg'" width="200" height="200" src="@String.Format("data:image/png;base64,{0}",Convert.ToBase64String(Model.fotograf))" style="margin: 10px 20px 10px 0px;">
+
+    <table class="table table-bordered table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>OgrenciNo</th>
+                <th>OgrenciAdi</th>
+                <th>OgrenciSoyad</th>
+                <th>TckimlikNo</th>
+                <th>Cinsiyet</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>@Model.OgrenciNo</td>
+
+            <td>@Model.CozulmusOgrenciAdi</td>
+
+            <td>@Model.CozulmusOgrenciSoyad</td>
+
+            <td>@Model.TckimlikNo</td>
+            <td>@Model.Cinsiyet</td>
+            <td>@Model.Durum</td>
+        </tr>
+
+    </table>
+
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th 
+    {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th 
+    {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th 
+    {
+        border: 1px solid black;
+    }
+
+</style>
+
+<h1>Veritabanındaki Şifreli Öğrenci Detayları</h1>
+
+    <table class="table table-bordered table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>OgrenciNo</th>
+                <th>OgrenciAdi</th>
+                <th>OgrenciSoyad</th>
+                <th>TckimlikNo</th>
+                <th>Cinsiyet</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>@Model.OgrenciNo</td>
+
+            <th>@Model.OgrenciAdi</th>
+
+            <th>@Model.OgrenciSoyad</th>
+
+            <td>@Model.TckimlikNo</td>
+            <td>@Model.Cinsiyet</td>
+            <td>@Model.Durum</td>
+        </tr>
+
+    </table>
+
+<h1>Ödeme Detayları</h1>
+
+    <table class="table table-bordered table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>OgrenciNo</th>
+                <th>OgrenciAdi</th>
+                <th>OgrenciSoyad</th>
+                <th>TckimlikNo</th>
+                <th>Cinsiyet</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>@Model.OgrenciNo</td>
+            <th>@Model.OgrenciAdi</th>
+            <th>@Model.OgrenciSoyad</th>
+            <td>@Model.TckimlikNo</td>
+            <td>@Model.Cinsiyet</td>
+            <td>@Model.Durum</td>
+        </tr>
+
+    </table>
+
+    <h1>Kur Detayları</h1>
+
+    <table class="table table-bordered table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>OgrenciNo</th>
+                <th>OgrenciAdi</th>
+                <th>OgrenciSoyad</th>
+                <th>TckimlikNo</th>
+                <th>Cinsiyet</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>@Model.OgrenciNo</td>
+            <th>@Model.OgrenciAdi</th>
+            <th>@Model.OgrenciSoyad</th>
+            <td>@Model.TckimlikNo</td>
+            <td>@Model.Cinsiyet</td>
+            <td>@Model.Durum</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

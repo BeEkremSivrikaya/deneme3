@@ -1,0 +1,270 @@
+﻿@using EntityLayer.Tables;
+@model List<Ogrenci>;
+@using System.Web;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+
+<h1>Öğrenci Bul</h1>
+<label>Öğrenci Bul</label>
+<input type="text" id="ad_search_query" style="width:295px">&nbsp;
+<input type="button" value="Bul" class="p-userButton" onClick="OgrenciDetaylar(document.getElementById('ad_search_query').value);" />
+
+<h1>Öğrenci Listesi</h1>
+
+
+<script>
+    function myFunction(id) 
+    {
+        alert("Öğrencinin Durumunu Değiştirmek Üzeresiniz!");
+        window.location.href = '@Url.Action("OgrenciDurumDegistir", "Ogrenci" , new {id = "ID"})'.replace("ID", parseInt(id));       
+    }
+
+    function OgrenciDetaylar(id) 
+    {
+        alert(id + " Numaralı öğrencinin detaylarına yönlendirileceksiniz.");
+        window.location.href = '@Url.Action("OgrenciDetay", "Ogrenci" , new {id = "ID"})'.replace("ID", parseInt(id));
+    }
+
+    /*
+    function OgrenciGuncelle(id) 
+    {
+        alert(id + " Numaralı öğrencinin bilgilerini güncelleyeceksiniz. ");
+        window.location.href = 'Url.Action("Guncelle", "Ogrenci" , new {id = "ID"})'.replace("ID", parseInt(id));
+    }
+    */
+
+    
+    function OgrenciGuncelle(id) 
+    {
+            Swal.fire({
+                title: 'Emin Misiniz ?',
+                text: id + " Numaralı öğrencinin bilgilerini güncelleyeceksiniz. ",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet',
+                cancelButtonText: "Hayır"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        timer: 4000,
+                        title: 'Bilgiler',
+                        text: "Öğrenci Bilgilerine Yönlendiriliyorsunuz",
+                        icon: "success",
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                    })
+
+                    window.location.href = '@Url.Action("Guncelle", "Ogrenci" , new {id = "ID"})'.replace("ID", parseInt(id));
+                }
+            })
+    }
+</script>
+
+<div style="overflow-x:auto;">
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th class="text-center">Öğrenci<br>Fotoğraf</th> 
+        <th class="text-center">Öğrenci<br>Numarası</th>
+        <th class="text-center">Öğrenci<br>Adı</th>
+        <th class="text-center">Öğrenci<br>Soyadı</th>
+        <th class="text-center">Kimlik<br>Numarası</th>
+        <th class="text-center">Öğrenci<br>Cinsiyet</th>
+        <th class="text-center">Öğrenci<br>Email</th>
+        <th class="text-center">Öğrenci<br>Düzenle</th>
+        <th class="text-center">Öğrenci<br>Durumu</th>
+        <th class="text-center">Kayıt<br>Tarihi</th>
+        <th class="text-center">Doğum<br>Tarihi</th>
+        <th class="text-center">Öğrenci<br>Yaş</th>
+        <th class="text-center">Öğrenci<br>Detay</th>
+    </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td><img onerror="this.src = 'default.jpg'" width="50" height="50" src="@String.Format("data:image/png;base64,{0}",Convert.ToBase64String(@x.fotograf))"></td>
+            <td>@x.OgrenciNo</td>
+
+            <td>@x.CozulmusOgrenciAdi</td>
+
+            <td>@x.CozulmusOgrenciSoyad</td>
+
+            <td>@x.TckimlikNo</td>
+            <td>@x.StudentGender</td>
+            <td>@x.Email</td>
+
+            <td>
+                <span>
+                    <a onclick="OgrenciGuncelle(@x.OgrenciNo)" class="btn btn-danger">Düzenle</a>
+                </span>
+            </td>
+
+            <td>
+
+            @if (x.Durum == true) 
+            { 
+                    <label class="switch">
+                        <input id="Durum" type="checkbox" checked onclick="myFunction(@x.OgrenciNo)">
+                        <span class="slider round"></span>
+                    </label>
+            }
+            
+
+            @if (x.Durum == false)
+            {
+                    <label class="switch">
+                        <input id="Durum" type="checkbox" onclick="myFunction(@x.OgrenciNo)">
+                        <span class="slider round"></span>
+                    </label>
+            }
+
+
+                @if (x.Durum == true) { <label>Aktif</label> } else { <label>Pasif</label>  }
+
+                <!-- 
+                <a href="/Ogrenci/PasifeAl/@x.OgrenciNo" class=" btn btn-danger">PasifeAl</a>
+                <a href="/Ogrenci/AktifeAl/@x.OgrenciNo" class=" btn btn-danger">AktifeAl</a>
+                -->
+                
+            </td>
+
+            <td>@x.KayitTarihi</td>
+
+            <td>@x.DogumTarihi</td>
+
+
+            <td>
+                <!-- age calculation-->
+                @{
+                    var birthday = @x.DogumTarihi;
+                    int age = (int)((DateTime.Now - birthday).TotalDays / 365.242199);
+                    @x.Yas = age;
+                }
+                <!-- age calculation-->
+                @x.Yas
+            </td>
+
+            <td>
+                <span> 
+                <a href="/Ogrenci/OgrenciDetay/@x.OgrenciNo" class=" btn btn-danger">Detay Göster</a>
+                <a href="/Ogrenci/OgrenciDetay/@x.OgrenciNo" class=" btn btn-primary">Veli Göster</a>
+                </span>
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+</div>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th 
+    {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th 
+    {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th 
+    {
+        border: 1px solid black;
+    }
+
+</style>
+
+<a href="/Ogrenci/YeniDepartman" class=" btn btn-danger" >Öğrenci Ekle</a>
+<a href="/Ogrenci/OgrenciGetir" class=" btn btn-danger">Öğrenci Getir</a>
+<a href="/Ogrenci/TanımlıOgrenciGetir12" class=" btn btn-danger">Tanımlı Öğrenci Getir</a>
+<a href="/Report/Print" class=" btn btn-danger">Raporlama</a>
+
+</body>
+
+@section Scripts
+    {
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+    </style>
+}

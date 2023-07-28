@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Tables;
+@model EntityLayer.Tables.Admin;
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel Ekle</h1>
+<form class="form-group" method="post">
+
+    <label>AdminID</label>
+    @Html.TextBoxFor(x=>x.AdminID,new{@class="form-control"})
+    <label>Kullanici</label>
+    @Html.TextBoxFor(x=>x.Kullanici,new{@class="form-control"})
+    <label>Sifre</label>
+    @Html.TextBoxFor(x=>x.Sifre,new{@class="form-control"})
+    <label>Rol</label>
+    @Html.TextBoxFor(x=>x.Rol,new{@class="form-control"})
+    <label>Şube Adı</label>
+    @Html.TextBoxFor(x=>x.Personel_Sube_Adı,new{@class="form-control"})
+
+    <div class="form-group">
+        <button class="btn btn-info" style="margin: 10px 10px 10px 0px;">Ekle</button>
+    </div>
+
+</form>

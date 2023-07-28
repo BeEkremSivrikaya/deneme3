@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Tables;
+@model List<Sube>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Şube</h1>
+
+<table class="table table-bordered table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        
+        <th>Sube Id</th>
+        <th>Sube Adı</th>
+        <th>Sube Adres</th>
+        <th>İl</th>
+    </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.Sube_Id</td>
+            <td>@x.Sube_Adı</td>
+            <td>@x.Sube_Adres</td>
+            <td>@x.Il</td>
+        </tr>
+    }
+
+</table>
+
+<style>
+
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #FFF0F5;
+    }
+
+    .table-striped > tbody > tr:nth-child(even) > td,
+    .table-striped > tbody > tr:nth-child(even) > th {
+        background-color: #F0FFF0;
+    }
+
+    .table-striped > tbody > tr > td,
+    .table-striped > tbody > tr > th,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tbody > tr > th {
+        border: 1px solid black;
+    }
+
+</style>
+
+<a href="/Sube/SubeEkle" class=" btn btn-danger">Sube ekle</a>
+<a href="/Sube/SubeGetir" class=" btn btn-danger">Sube Getir</a>

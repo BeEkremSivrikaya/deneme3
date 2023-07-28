@@ -1,0 +1,11 @@
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (1, '591-15-0412', 'Dorene', 'Gudgen', 'Recruiting Manager', '(966) 5493364', 'dgudgen0@squidoo.com', 10);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (2, '246-03-5474', 'Lani', 'McGrotty', 'Staff Scientist', '(669) 5045860', 'lmcgrotty1@cargocollective.com', 5);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (3, '777-88-8711', 'Waly', 'Tregunnah', 'Data Coordiator', '(823) 9772923', 'wtregunnah2@constantcontact.com', 7);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (4, '570-02-3906', 'Renaud', 'Streeten', 'Human Resources Assistant I', '(880) 2536829', 'rstreeten3@imageshack.us', 1);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (5, '314-22-2002', 'Leila', 'Sherar', 'Accountant I', '(534) 6217111', 'lsherar4@nydailynews.com', 8);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (6, '776-34-1178', 'Tommie', 'Bortolomei', 'Social Worker', '(132) 7438586', 'tbortolomei5@quantcast.com', 1);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (7, '787-93-3777', 'Onfroi', 'Frosdick', 'Pharmacist', '(978) 2993415', 'ofrosdick6@wordpress.org', 5);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (8, '678-97-0999', 'Jose', 'McGarahan', 'Financial Analyst', '(471) 8879922', 'jmcgarahan7@youtube.com', 3);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (9, '772-47-1325', 'Ebony', 'Kassel', 'Nurse', '(357) 5335462', 'ekassel8@spotify.com', 1);
+insert into velis ("Veli_Id", "TckimlikNo", "Veli_Ad", "Veli_Soyad", "Meslek", "Cepno", "Eposta", "Ogrenci_Id") values (10, '294-27-2344', 'Davida', 'Kermath', 'Food Chemist', '(671) 9307298', 'dkermath9@rediff.com', 9);
+
